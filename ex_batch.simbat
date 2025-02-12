@@ -1,0 +1,33 @@
+; Minimal script to generate two random sources and save the EEG data to "data" folder
+
+; 1) Set epoch width
+Settings width=700
+
+; 2) Clear previous model
+ModelClear noquery
+
+; 3) Define constraints for the first source (random in left, upper hemisphere)
+Constraints x=-1.0 -0.2 z=0.0 1.0 ecc=0.2 0.8
+
+; 4) Define a biphasic waveform (100–400 ms)
+SourceWaveform start=100 width=300 nodes=4 0 -20 +10 0
+
+; 5) Add a random source
+SourceAdd label=S1 x=r y=r z=r ox=r oy=r oz=r
+
+; 6) Second source: shift waveform start to 200 ms
+SourceWaveform start=200
+
+; 7) Relax x-constraint and add second (polar) source
+Constraints x=-1.0 1.0
+SourceAdd label=polar ecc=r theta=45 phi=0 otheta=0 ophi=0
+
+; 8) Specify the folder for raw data and generate 10 triggers
+Settings currentrawfolder=C:\Users\PHELANLE\PycharmProjects\edit_and_run_batch\data
+RawData ntrigs=10 target=EEG_DATA.dat trigID=11
+RawData interval=1 intervalvar=0.
+RawData RMSnoise=0.2 alpha=0.5
+RawData go
+
+; 9) Save this model
+ModelSave EEG_DATA

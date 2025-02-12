@@ -1,0 +1,7 @@
+BESA Generic Data
+nChannels=33
+sRate=200.00
+nSamples=3020
+format=float
+file=EEG_DATA.dat
+EventFile=EEG_DATA.evt
