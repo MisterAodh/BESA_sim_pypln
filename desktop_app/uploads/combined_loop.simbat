@@ -1,0 +1,38 @@
+Logging off
+Settings width=700
+
+For var=i start=1 end=1 step=1
+  ModelClear noquery
+  ModelLoad "C:/Users/PHELANLE/PycharmProjects/Data_Generator/uploads/P4_NormalVision.mod"
+  Settings currentrawfolder="C:/Users/PHELANLE/Desktop/output"
+  RawData target="temp_1.dat"
+  RawData RMSnoise=0.38
+  RawData alpha=0.5
+  RawData ntrigs=10 trigID=11
+  RawData interval=1 intervalvar=0
+  RawData go
+EndFor
+
+For var=i start=2 end=2 step=1
+  ModelClear noquery
+  ModelLoad "C:/Users/PHELANLE/PycharmProjects/Data_Generator/uploads/P4_NormalVision.mod"
+  Settings currentrawfolder="C:/Users/PHELANLE/Desktop/output"
+  RawData target="temp_2.dat"
+  RawData RMSnoise=0.31
+  RawData alpha=0.5
+  RawData ntrigs=10 trigID=11
+  RawData interval=1 intervalvar=0
+  RawData go
+EndFor
+
+For var=i start=3 end=3 step=1
+  ModelClear noquery
+  ModelLoad "C:/Users/PHELANLE/PycharmProjects/Data_Generator/uploads/P4_NormalVision.mod"
+  Settings currentrawfolder="C:/Users/PHELANLE/Desktop/output"
+  RawData target="temp_3.dat"
+  RawData RMSnoise=0.17
+  RawData alpha=0.5
+  RawData ntrigs=10 trigID=11
+  RawData interval=1 intervalvar=0
+  RawData go
+EndFor
